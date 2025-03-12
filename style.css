@@ -662,14 +662,17 @@
   
   .footer {
     color: var(--cadet-blue-creyola);
-    background-image: url('../car-manufacturing-company/assets/images/hero-bg.jpg');
+    /* background-image: url('../car-manufacturing-company/assets/images/hero-bg.jpg'); */
   }
   
   .footer .shape {
     display: none;
   }
   
-  /* .footer-top { background-color: var(--space-cadet); } */
+  .footer-top { 
+    background-color: var(--space-cadet);
+    background-image: url('../car-manufacturing-company/assets/images/hero-bg.jpg');
+   }
   
   
   .footer-top .container {
