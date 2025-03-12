@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    border-top: 5px solid maroon;
+    border-bottom: 5px solid maroon;
+}
+
+h2 {
+    color: navy;
+    font-size: 24px;
+}
+
+h3,
+h4 {
+    color: maroon;
+}
+
+h3 {
+    align-self: flex-start;
+    font-size: 18px;
+}
+
+form,
+#salaryForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+#salaryForm-personal {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+}
+
+#salaryForm-salary {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+}
+
+#salaryForm-salary button,
+.calculate {
+    align-self: last baseline;
+    background-color: maroon;
+    height: 40px;
+    padding: 10px 20px;
+    width: 80%;
+    font-size: 12px;
+}
+
+.personal-section,
+.personal-sec,
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input,
+select {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+select {
+    width: 80%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:nth-child(1) {
+    background-color: navy;
+}
+
+button:nth-child(2) {
+    background-color: maroon;
+}
+
+.salary-slip {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid navy;
+    border-radius: 10px;
+    background-color: #f8f8ff;
+    text-align: left;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons,
+button {
+    padding: 10px 50px;
+}
+
+
+
+/* salaryMaintenance page */
+
+/* General Styles */
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    padding: 20px;
+    margin: 100px 10px;
+}
+
+/* Invoice Wrapper */
+.invoice-wrapper {
+    background: white;
+    max-width: 700px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Invoice Header */
+.invoice-head {
+    padding-bottom: 15px;
+}
+
+.invoice-head-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.invoice-head-top-left img {
+    width: 120px;
+}
+
+.invoice-head-top-right h3 {
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+.hr {
+    border-bottom: 2px solid #ddd;
+    margin: 15px 0;
+}
+
+.invoice-head-middle {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Employee & Bank Details */
+.invoice-head-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.invoice-head-bottom ul {
+    list-style-type: none;
+}
+
+.invoice-head-bottom ul li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+/* Invoice Table */
+.invoice-body {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+/* Total Salary Row */
+.total td {
+    font-weight: 600;
+    background: #e0f7e0;
+}
+
+/* Invoice Footer */
+.invoice-foot {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.invoice-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.invoice-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.invoice-btn:hover {
+    background: #0056b3;
+}
+
+.invoice-btn i {
+    font-size: 16px;
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 275px) {
+
+    .personal-section,
+    .personal-sec,
+    label {
+        font-size: 10px;
+    }
+
+    #salaryForm-salary button, .calculate {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .invoice-head-bottom {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .personal-sec .personal-sec,
+    label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 769px) {
+    .container h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .personal-section .personal-sec,
+    label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 965px) {
+    .container h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}

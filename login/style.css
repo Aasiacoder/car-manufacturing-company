@@ -1,0 +1,211 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    position: relative;
+    width: 500px;
+    background: url(../assets/images//hero-bg.jpg);
+    background-color: #001743; /* optional */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Toggle Buttons */
+.switch-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.switch-btn {
+    flex: 1;
+    padding: 12px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    background: #800000;
+    color: white;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.switch-btn:hover {
+    background: #fff;
+    color: #800000;
+
+}
+
+/* Form Box */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.form-box p {
+    margin-top: 10px;
+}
+
+.form-box p a:hover {
+    color: #fff;
+}
+
+.form-box p a {
+    color: #800000;
+}
+
+.form {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form h2 {
+    padding-bottom: 10px;
+}
+
+ #login-form {
+    left: 0%;
+}
+
+ #signup-form {
+    left: 100%;
+} 
+
+/* Input Fields */
+input {
+    width: 100%;
+    /* width: calc(100% - 20px); */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #800000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #600000;
+}
+
+/* Animation for Forms */
+.move-left {
+    transform: translateX(-100%);
+}
+
+.move-right {
+    transform: translateX(0%);
+}
+
+.btn-primary .arrowLeft {
+    width: 30px;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-primary img {
+    color: #fff;
+}
+
+.btn-primary .arrowLeft:hover {
+    border: 2px solid #666666;
+}
+
+
+/*-----------------------------------*\
+    #MEDIA QUERIES
+  \*-----------------------------------*/
+
+  /**
+   * responsive for large than 275px screen
+   */
+
+@media (min-width: 275px) {
+    .container {
+        width: 400px;
+        padding: 30px;
+    }
+}
+
+/**
+   * responsive for large than 575px screen
+   */
+
+@media (min-width: 575px) {
+    .container {
+        width: 450px;
+        padding: 30px;
+    }
+}
+
+
+/**
+   * responsive for large than 768px screen
+   */
+
+@media (min-width: 768px) {
+    .container {
+        width: 500px;
+        padding: 30px;
+    }
+}
+
+/**
+   * responsive for large than 992px screen
+   */
+
+@media (min-width: 992px) {
+    .container {
+        width: 500px;
+        padding: 30px;
+    }
+}
+
+/**
+   * responsive for large than 1200px screen
+   */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 500px;
+        padding: 30px;
+    }
+}
