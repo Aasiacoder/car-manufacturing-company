@@ -670,8 +670,8 @@
   }
   
   .footer-top { 
-    background-color: var(--space-cadet);
-    background-image: url('../car-manufacturing-company/assets/images/hero-bg.jpg');
+    background-color: #000931; /*  var(--space-cadet) */ 
+    /* background-image: url('../car-manufacturing-company/assets/images/hero-bg.jpg'); */
    }
   
   
