@@ -8,6 +8,7 @@ body {
 }
 
 .container {
+    /* margin-inline: 10px; */
     width: 90%;
     max-width: 450px;
     margin: 50px auto;
@@ -15,8 +16,10 @@ body {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #000080; /* Maroon Border */
-    border-bottom: 5px solid #000080; /* Maroon Border */
+    border-top: 5px solid #000080;
+    /* Maroon Border */
+    border-bottom: 5px solid #000080;
+    /* Maroon Border */
 }
 
 h2 {
@@ -60,27 +63,38 @@ button:hover {
 }
 
 /* Outvoice Styles */
-.invoice-wrapper {
-    max-width: 700px;
+.outvoice-wrapper {
     /* height: 100%; */
+    /* width: 100%; */
+    max-width: 700px;
     margin: 20px auto;
-    background: white;
-    padding: 20px 40px 20px 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* padding: 20px 40px 20px 40px; */
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-.invoice-head {
+.outvoice {
+    margin-inline: 10px;
+    max-width: 700px;
+    padding: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-height: 920px;
+    background: white;
+}
+
+.outvoice-head {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.invoice-head h3 {
-    font-size: 22px;
+.outvoice-head h3 {
+    font-size: 20px;
     color: #333;
 }
 
-.invoice-head img {
+.outvoice-head img {
     max-width: 100px;
     margin-bottom: 10px;
 }
@@ -90,39 +104,64 @@ button:hover {
     margin: 15px 0;
 }
 
-.invoice-head-middle {
+.outvoice-head-middle {
     display: flex;
     justify-content: space-between;
 }
 
-.invoice-head-bottom{
+.outvoice-head-middle p,
+span {
+    font-size: 16px;
+    display: flex;
+}
+
+.outvoice-head-bottom {
     display: flex;
     justify-content: space-between;
     align-items: top;
 }
 
-.invoice-head-bottom-left, ul, li{
+.outvoice-head-bottom-left,
+ul,
+li {
     text-align: left;
     text-decoration: none;
     list-style: none;
+    font-size: 16px;
 }
 
-.invoice-head-bottom-right ul li{
+.outvoice-head-bottom-right ul li {
     text-align: right;
     text-decoration: none;
     list-style: none;
+    font-size: 16px;
 }
 
-.invoice-body table {
+.outvoice-body table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.invoice-body th, .invoice-body td {
+.outvoice-body table,
+td {
+    font-size: 16px;
+}
+
+.outvoice-body th,
+.outvoice-body td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
+}
+
+.outvoice-body-bottom .outvoice-body-info-item,
+.info-item-td {
+    font-size: 16px;
+}
+
+.outvoice-foot p span {
+    font-size: 16px;
 }
 
 .text-bold {
@@ -137,14 +176,19 @@ button:hover {
     text-align: left;
 }
 
-.invoice-btns {
+.outvoice-btns {
     text-align: center;
     margin-top: 20px;
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: center;
 }
 
-.invoice-btn {
+.outvoice-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     background: #000080;
     color: white;
     padding: 10px 15px;
@@ -153,57 +197,114 @@ button:hover {
     cursor: pointer;
     border-radius: 5px;
     margin: 5px;
+    text-align: center;
 }
 
-.invoice-btn:hover {
+.outvoice-btn:hover {
     background: #01016c;
 }
 
 @media print {
-    .invoice-btns {
+    .outvoice-btns {
         display: none;
     }
 }
 
 
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     .container {
         max-width: 85%;
     }
 
-    .invoice-head-bottom{
+    .outvoice-head h3 {
+        font-size: 18px;
+    }
+
+    .outvoice-head-middle {
         display: flex;
         flex-direction: column;
         text-align: left;
     }
 
-    .invoice-head-bottom-right ul li {
+    .outvoice-head-middle p,
+    span {
+        font-size: 14px;
+    }
+
+    .outvoice-head-bottom {
+        display: flex;
+        flex-direction: column;
         text-align: left;
     }
 
-    .invoice-head-top, .invoice-head-middle, .invoice-head-bottom{
-        grid-template-columns: repeat(1, 1fr);
+    .outvoice-head-bottom-left,
+    ul,
+    li {
+        font-size: 14px;
     }
 
-    .invoice-head-bottom-right{
+    .outvoice-head-bottom-right {
         margin-top: 12px;
         margin-bottom: 12px;
     }
 
-    .invoice *{
+    .outvoice-head-bottom-right ul li {
+        font-size: 14px;
+        text-align: left;
+
+    }
+
+    .outvoice-head-top,
+    .outvoice-head-middle,
+    .outvoice-head-bottom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .outvoice-body table,
+    td {
+        font-size: 14px;
+    }
+
+    .outvoice-body-bottom .outvoice-body-info-item,
+    .info-item-td {
+        font-size: 14px;
+    }
+
+    .outvoice-foot p span {
+        font-size: 14px;
+    }
+
+    .outvoice * {
         text-align: left;
     }
 
-    .invoice{
+    .outvoice {
         padding: 28px;
+    }
+
+    .outvoice-btns {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .outvoice-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        font-size: 12px;
+        text-align: center;
     }
 }
 
-.overflow-view{
+.overflow-view {
     overflow-x: scroll;
 }
-.invoice-body{
+
+.outvoice-body {
     min-width: 600px;
 }
 
@@ -214,8 +315,8 @@ button:hover {
     }
 }
 
-@media (max-width: 992px){
-    .invoice{
+@media (max-width: 992px) {   
+    .outvoice {
         padding: 40px;
     }
 }

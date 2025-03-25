@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Dashboard</title>
     <link rel="stylesheet" href="./style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/svg+xml">
+
+    <!-- Firebase App (Required) -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script> -->
+
+    <!-- Firebase Firestore -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script> -->
+
 </head>
 
 <body>
@@ -22,6 +32,29 @@
             <img src="../assets/images/hero-banner1.png" class="img-image" alt="">
         </div>
     </div>
+
+    <!-- Firebase SDK v9+ -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCaNn6S3D0gr2nXII6qg7T_YGWpit6NJik",
+            authDomain: "car-manufacturing-company.firebaseapp.com",
+            projectId: "car-manufacturing-company",
+            storageBucket: "car-manufacturing-company.firebasestorage.app",
+            messagingSenderId: "603524444054",
+            appId: "1:603524444054:web:97a921337dd79ef94f37b7",
+            measurementId: "G-T3EGTE8PBB"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Attach auth to window so script.js can access it
+        window.auth = auth;
+    </script>
 
 
     <script src="./script.js"></script>

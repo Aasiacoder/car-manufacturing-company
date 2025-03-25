@@ -159,16 +159,19 @@ body{
     min-height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 10px;
 }
 .invoice{
-    max-width: 800px;
+    margin-top: 100px;
+    max-width: 700px;
     margin-right: auto;
     margin-left: auto;
     background-color: var(--white-color);
     padding: 70px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 0 10px 0px rgb(160, 160, 160);
     border-radius: 5px;
     min-height: 920px;
 }
@@ -220,7 +223,8 @@ body{
     margin-top: 20px;
     display: flex;
     justify-content: center;
-
+    flex-wrap: wrap;
+    width: 100%;
 }
 .invoice-btn{
     padding: 3px 9px;
@@ -229,6 +233,7 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     margin: 5px;
+    font-size: 16px;
 }
 
 .invoice-head-top, .invoice-head-middle, .invoice-head-bottom{
@@ -254,6 +259,10 @@ body{
     }
     .invoice{
         padding: 28px;
+    }
+
+    .invoice-btn{
+        font-size: 12px;
     }
 }
 

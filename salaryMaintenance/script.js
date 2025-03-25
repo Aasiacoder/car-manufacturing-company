@@ -24,25 +24,55 @@ function calculateSalary() {
 }
 
 // Load and display salary data in salaryMaintenance.html
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
     const salaryData = JSON.parse(localStorage.getItem("salaryData"));
-    if (!salaryData) return;
+    // if (!salaryData) return;
 
-    document.getElementById("invoice-date").innerText = new Date().toLocaleDateString();
-    document.getElementById("invoice-no").innerText = Math.floor(10000 + Math.random() * 90000);
-    document.getElementById("emp-name").innerText = salaryData.empName;
-    document.getElementById("emp-id").innerText = `ID: ${salaryData.empId}`;
-    document.getElementById("emp-location").innerText = salaryData.location;
-    document.getElementById("bank-name").innerText = salaryData.bankName;
-    document.getElementById("bank-acc").innerText = `Acc: ${salaryData.bankAcc}`;
-    document.getElementById("ifsc-code").innerText = `IFSC: ${salaryData.ifsc}`;
-    document.getElementById("salary-base").innerText = `₹${salaryData.baseSalary.toFixed(2)}`;
-    document.getElementById("salary-pf").innerText = `₹${salaryData.pf.toFixed(2)}`;
-    document.getElementById("salary-df").innerText = `₹${salaryData.df.toFixed(2)}`;
-    document.getElementById("salary-gst").innerText = `₹${salaryData.gst.toFixed(2)}`;
-    document.getElementById("salary-bonus").innerText = `₹${salaryData.bonus.toFixed(2)}`;
-    document.getElementById("salary-total").innerText = `₹${salaryData.netSalary.toFixed(2)}`;
-};
+    if (!salaryData) {
+        console.error("Salary data not found in localStorage");
+        return;  // Stop execution if no data
+    }
+
+
+    function formatCurrency(value) {
+        return isNaN(value) || value == null ? "₹0.00" : `₹${Number(value).toLocaleString("en-IN", { minimumFractionDigits: 2 })}`;
+    }
+
+
+    function setElementText(id, value) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.innerText = value;
+        }
+        // else {
+        //     console.error(`Element with ID '${id}' not found`);
+        // }
+    }
+
+    // Set invoice details    
+    setTimeout(() => {
+
+        setElementText("invoice-date", new Date().toLocaleDateString());
+        setElementText("invoice-no", Math.floor(10000 + Math.random() * 90000));
+        setElementText("emp-name", salaryData.empName || "N/A");
+        setElementText("emp-id", salaryData.empId ? `ID: ${salaryData.empId}` : "ID: N/A");
+        setElementText("emp-location", salaryData.location || "N/A");
+
+        // Ensure Bank Details Exist Before Setting
+        setElementText("bank-name", salaryData.bankName || "N/A");
+        setElementText("bank-acc", salaryData.bankAcc ? `Acc: ${salaryData.bankAcc}` : "Acc: N/A");
+        setElementText("ifsc-code", salaryData.ifsc ? `IFSC: ${salaryData.ifsc}` : "IFSC: N/A");
+
+        // Set salary details
+        setElementText("salary-base", formatCurrency(salaryData.baseSalary));
+        setElementText("salary-pf", formatCurrency(salaryData.pf));
+        setElementText("salary-df", formatCurrency(salaryData.df));
+        setElementText("salary-gst", formatCurrency(salaryData.gst));
+        setElementText("salary-bonus", formatCurrency(salaryData.bonus));
+        setElementText("salary-total", formatCurrency(salaryData.netSalary));
+    }, 200); // Small delay to ensure the DOM is fully ready
+
+});
 
 // Print function
 function printInvoice() {
@@ -52,7 +82,6 @@ function printInvoice() {
 // Function to download the invoice as a PDF
 function downloadInvoice() {
     const { jsPDF } = window.jspdf;
-
     const invoice = document.getElementById("print-area");
 
     html2canvas(invoice, { scale: 2 }).then((canvas) => {
@@ -65,34 +94,3 @@ function downloadInvoice() {
         pdf.save("Salary_Invoice.pdf");
     });
 }
-
-// Set current date and generate invoice number
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("invoice-date").innerText = new Date().toLocaleDateString();
-    document.getElementById("invoice-no").innerText = "INV-" + Math.floor(Math.random() * 1000000);
-
-    // Sample Employee & Salary Data (Replace with real data if needed)
-    document.getElementById("emp-name").innerText = "John Doe";
-    document.getElementById("emp-id").innerText = "EMP-10234";
-    document.getElementById("emp-location").innerText = "New York, USA";
-    
-    document.getElementById("bank-name").innerText = "ABC Bank";
-    document.getElementById("bank-acc").innerText = "XXXX-XXXX-XXXX-5678";
-    document.getElementById("ifsc-code").innerText = "ABC01234";
-
-    // Salary Details (Example Calculation)
-    let baseSalary = 50000;
-    let pfDeduction = baseSalary * 0.12;
-    let dfDeduction = baseSalary * 0.08;
-    let gstDeduction = baseSalary * 0.05;
-    let bonus = 5000;
-    let netSalary = baseSalary - (pfDeduction + dfDeduction + gstDeduction) + bonus;
-
-    document.getElementById("salary-base").innerText = "₹" + baseSalary.toLocaleString();
-    document.getElementById("salary-pf").innerText = "-₹" + pfDeduction.toLocaleString();
-    document.getElementById("salary-df").innerText = "-₹" + dfDeduction.toLocaleString();
-    document.getElementById("salary-gst").innerText = "-₹" + gstDeduction.toLocaleString();
-    document.getElementById("salary-bonus").innerText = "+₹" + bonus.toLocaleString();
-    document.getElementById("salary-total").innerText = "₹" + netSalary.toLocaleString();
-});
-

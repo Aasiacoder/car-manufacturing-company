@@ -9,33 +9,31 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Autofix - Auto Maintenance & Repair Service</title>
+  <title>First Choice Company</title>
   <meta name="title" content="Autofix - Auto Maintenance & Repair Service">
   <meta name="description" content="This is a vehicle repair html template made by codewithsadee">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml">
 
   <!-- 
     - google font link
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
 
   <!-- 
     - material icon font
   -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
 
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- 
     - preload images
@@ -45,15 +43,15 @@
 
   <!-- Firebase for Signin & login auth -->
   <!-- Firebase CDN -->
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script> -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script> -->
   <!-- <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script> -->
 
   <!-- Firebase and Authentication -->
   <script type="module" src="./firebase/firebase-config.js"></script>
   <script type="module" src="./firebase/auth.js"></script>
-  <!-- <script type="module" src="./script.js" defer></script> -->
-
+  <script type="module" src="script.js" defer></script>
 
 </head>
 
@@ -107,9 +105,7 @@
   <main>
     <article>
 
-      <!-- 
-        - #HERO
-      -->
+      <!-- #HERO -->
 
       <section class="hero has-bg-image" id="home" aria-label="home"
         style="background-image: url('./assets/images/hero-bg.jpg')">
@@ -150,10 +146,14 @@
       <section class="section about has-before" aria-labelledby="about-label" id="about"
         style="background-image: url('./assets/images/service-bg.jpg')">
         <div class="container">
-          <img class="image-abs" src="./assets/images/about-abs-banner.avif" alt="">
+          <!-- <img class="image-abs" src="./assets/images/about-abs-banner.avif" alt=""> -->
+
+          <figure class="about-banner">
+            <img src="./assets/images/logo.png" width="540" height="540" loading="lazy" alt="vehicle repire equipments"
+              class="w-100">
+          </figure>
 
           <div class="about-content">
-
             <p class="section-subtitle :dark" style="color: #C1322F;">About Us</p>
 
             <h2 class="h2 section-title">Crafting Quality and Innovation in Car Manufacturing.</h2>
@@ -194,7 +194,6 @@
               </li>
 
             </ul>
-
           </div>
 
         </div>

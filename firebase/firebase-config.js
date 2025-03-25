@@ -1,11 +1,12 @@
 // Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
 // invoice outvoice 
 // import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 
-// Your Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCaNn6S3D0gr2nXII6qg7T_YGWpit6NJik",
     authDomain: "car-manufacturing-company.firebaseapp.com",
@@ -19,10 +20,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
 // invoice & outvoice
 // const db = getFirestore(app);
 
+// export { auth, db };
+
+// Export auth so other files can use it
 export { auth };
+
 
 
 

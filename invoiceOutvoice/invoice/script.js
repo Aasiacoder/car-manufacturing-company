@@ -7,6 +7,7 @@ window.onload = function () {
     document.getElementById("client-address").textContent = params.get("clientAddress") || "N/A";
     document.getElementById("invoice-service").textContent = params.get("service") || "N/A";
     document.getElementById("invoice-description").textContent = params.get("description") || "N/A";
+    
     const rate = parseFloat(params.get("rate")) || 0;
     const quantity = parseInt(params.get("quantity")) || 0;
     const amount = rate * quantity;
@@ -22,6 +23,17 @@ window.onload = function () {
     document.getElementById("sub-total").textContent = `₹${amount.toFixed(2)}`;
     document.getElementById("tax").textContent = `₹${tax.toFixed(2)}`;
     document.getElementById("total").textContent = `₹${total.toFixed(2)}`;
+
+    // Generate unique date
+    const today = new Date();
+    const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
+                          (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                          today.getFullYear();
+    document.querySelector(".invoice-head-middle-left p").innerHTML = `<span class="text-bold">Date</span>: ${formattedDate}`;
+
+    // Generate unique invoice number (random 5-digit number)
+    const invoiceNo = Math.floor(10000 + Math.random() * 90000);
+    document.querySelector(".invoice-head-middle-right p").innerHTML = `<span class="text-bold">Invoice No:</span> ${invoiceNo}`;
 };
 
 // print invoice
@@ -31,7 +43,6 @@ function printInvoice() {
 
 // download invoice
 // Download Invoice as PDF
-
 const { jsPDF } = window.jspdf; //jsPDF
 
 function downloadInvoice() {

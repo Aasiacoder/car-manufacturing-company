@@ -60,6 +60,19 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("tax").innerText = "₹" + (localStorage.getItem("tax") || "0.00");
         document.getElementById("final-payable").innerText = "₹" + (localStorage.getItem("finalPayable") || "0.00");
         document.getElementById("outvoice-amount").innerText = "₹" + (localStorage.getItem("outvoiceAmount") || "0.00");
+
+
+
+        // Generate unique date
+        const today = new Date();
+        const formattedDate = today.getDate().toString().padStart(2, '0') + '/' +
+            (today.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            today.getFullYear();
+        document.querySelector(".outvoice-head-middle-left p").innerHTML = `<span class="text-bold">Date</span>: ${formattedDate}`;
+
+        // Generate unique invoice number (random 5-digit number)
+        const invoiceNo = Math.floor(10000 + Math.random() * 90000);
+        document.querySelector(".outvoice-head-middle-right p").innerHTML = `<span class="text-bold">Invoice No</span>: ${invoiceNo}`;
     }
 
     if (window.location.pathname.includes("outvoice.html")) {
