@@ -78,6 +78,18 @@
                     </select>
                 </div>
 
+                <!-- add new feature -->
+                <div class="personal-sec">
+                    <label for="workingDays">Total Working Days:</label>
+                    <input type="number" id="workingDays" required>
+                </div>
+
+                <div class="personal-sec">
+                    <label for="absentDays">Absent Days:</label>
+                    <input type="number" id="absentDays" required>
+                </div>
+                <!--  -->
+
                 <div class="personal-sec">
                     <label for="baseSalary">Base Salary (₹):</label>
                     <input type="number" id="baseSalary" required>
@@ -102,33 +114,19 @@
                     <input type="number" id="bonus" value="10" required>
                 </div>
 
-                <div class="personal-sec">
+                <!-- <div class="personal-sec">
                     <button type="button" class="calculate" onclick="calculateSalary()">Calculate Salary</button>
-                </div>
+                </div> -->
+            </div>
+
+            <div id="calculate-salary">
+                <button type="button" class="calculate" onclick="calculateSalary()">Calculate Salary</button>
             </div>
 
             <!-- <button type="button" class="calculate" onclick="calculateSalary()">Calculate Salary</button> -->
 
         </form>
 
-        <div id="salarySlip" class="salary-slip">
-            <h3>Salary Slip</h3>
-            <p><strong>Name:</strong> <span id="slip-name"></span></p>
-            <p><strong>Employee ID:</strong> <span id="slip-id"></span></p>
-            <p><strong>Gender:</strong> <span id="slip-gender"></span></p>
-            <p><strong>Location:</strong> <span id="slip-location"></span></p>
-            <p><strong>Bank Name:</strong> <span id="slip-bankName"></span></p>
-            <p><strong>Account No:</strong> <span id="slip-bankAcc"></span></p>
-            <p><strong>IFSC Code:</strong> <span id="slip-ifsc"></span></p>
-
-            <p><strong>Position:</strong> <span id="slip-position"></span></p>
-            <p><strong>Base Salary:</strong> ₹<span id="slip-baseSalary"></span></p>
-            <p><strong>PF Deduction:</strong> ₹<span id="slip-pf"></span></p>
-            <p><strong>DF Deduction:</strong> ₹<span id="slip-df"></span></p>
-            <p><strong>GST Deduction:</strong> ₹<span id="slip-gst"></span></p>
-            <p><strong>Bonus Added:</strong> ₹<span id="slip-bonus"></span></p>
-            <h4><strong>Net Salary:</strong> ₹<span id="slip-netSalary"></span></h4>
-        </div>
     </div>
 
 </body>

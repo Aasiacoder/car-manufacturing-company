@@ -1,4 +1,3 @@
-// Store salary details and navigate to salaryMaintenance.html
 function calculateSalary() {
     const empName = document.getElementById("empName").value;
     const empId = document.getElementById("empId").value;
@@ -8,20 +7,48 @@ function calculateSalary() {
     const ifsc = document.getElementById("ifsc").value;
     const position = document.getElementById("position").value;
     const baseSalary = parseFloat(document.getElementById("baseSalary").value);
-    const pf = (parseFloat(document.getElementById("pf").value) / 100) * baseSalary;
-    const df = (parseFloat(document.getElementById("df").value) / 100) * baseSalary;
-    const gst = (parseFloat(document.getElementById("gst").value) / 100) * baseSalary;
+    // const pf = (parseFloat(document.getElementById("pf").value) / 100) * baseSalary;
+    // const df = (parseFloat(document.getElementById("df").value) / 100) * baseSalary;
+    // const gst = (parseFloat(document.getElementById("gst").value) / 100) * baseSalary;
     const bonus = (parseFloat(document.getElementById("bonus").value) / 100) * baseSalary;
+    // add new feature
+    const workingDays = parseFloat(document.getElementById("workingDays").value);
+    const absentDays = parseFloat(document.getElementById("absentDays").value);
 
-    const netSalary = baseSalary - pf - df - gst + bonus;
+    // const netSalary = baseSalary - pf - df - gst + bonus;
 
-    localStorage.setItem("salaryData", JSON.stringify({
-        empName, empId, location, bankName, bankAcc, ifsc, position,
-        baseSalary, pf, df, gst, bonus, netSalary
-    }));
+    // add new feature
+    const pf = 0.12 * baseSalary;
+    const df = 0.05 * baseSalary;
+    const gst = 0.18 * baseSalary;
+
+    const perDaySalary = baseSalary / workingDays;
+    const absentDeduction = perDaySalary * absentDays;
+
+    const totalDeductions = pf + df + gst + absentDeduction;
+
+    const netSalary = baseSalary - totalDeductions + bonus;
+
+    const salaryData = {
+        empName, empId, location, bankName, bankAcc, ifsc, position, baseSalary, pf, df, gst, bonus,
+        absentDays, workingDays, absentDeduction, totalDeductions, netSalary
+    };
+
+    localStorage.setItem("salaryData", JSON.stringify(salaryData));
+    window.location.href = "salaryMaintenance.html";
+    // 
+
+    // localStorage.setItem("salaryData", JSON.stringify({
+    //     empName, empId, location, bankName, bankAcc, ifsc, position,
+    //     baseSalary, pf, df, gst, bonus, netSalary
+    // }));
 
     window.location.href = "salaryMaintenance.html";
 }
+
+
+
+
 
 // Load and display salary data in salaryMaintenance.html
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,6 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Set salary details
         setElementText("salary-base", formatCurrency(salaryData.baseSalary));
+        // add new feature
+        setElementText("workingDays", salaryData.workingDays || 0);
+        setElementText("absentDays", salaryData.absentDays || 0);
+        setElementText("absentDeduction", formatCurrency(salaryData.absentDeduction));
+        // 
         setElementText("salary-pf", formatCurrency(salaryData.pf));
         setElementText("salary-df", formatCurrency(salaryData.df));
         setElementText("salary-gst", formatCurrency(salaryData.gst));

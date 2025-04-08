@@ -4,16 +4,17 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 110vh;
     width: 100%;
 }
 
 /* Container */
 .container {
-    height: 100%;
+    /* height: 100%; */
+    margin: 50px auto;
     background-color: white;
     padding: 25px;
     width: 90%;

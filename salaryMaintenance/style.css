@@ -42,10 +42,13 @@ h3 {
 
 form,
 #salaryForm {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     margin-top: 30px;
+    /* add new feature */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: space-evenly;
+    align-items: self-start;
 }
 
 #salaryForm-personal {
@@ -64,21 +67,33 @@ form,
     text-align: left;
 }
 
-#salaryForm-salary button,
+#calculate-salary button,
 .calculate {
-    align-self: last baseline;
+    /* align-self: last baseline; */
     background-color: maroon;
     height: 40px;
     padding: 10px 20px;
-    width: 80%;
-    font-size: 12px;
+    /* width: 80%; */
+    width: 200%;
+    font-size: 14px;
 }
+
+/* add new  */
+.personal-section, .personal-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+}
+
+/*  */
 
 .personal-section,
 .personal-sec,
 label {
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 16px;
 }
 
@@ -114,7 +129,7 @@ button:nth-child(2) {
     background-color: maroon;
 }
 
-.salary-slip {
+/* .salary-slip {
     display: none;
     margin-top: 20px;
     padding: 15px;
@@ -122,7 +137,7 @@ button:nth-child(2) {
     border-radius: 10px;
     background-color: #f8f8ff;
     text-align: left;
-}
+} */
 
 .buttons {
     margin-top: 30px;
@@ -311,7 +326,7 @@ th {
         font-size: 12px;
     }
 
-    #salaryForm-salary button,
+    #calculate-salary button,
     .calculate {
         font-size: 10px;
     }
@@ -357,6 +372,11 @@ th {
     /* change */
     .personal-sec button {
         font-size: 14px;
+    }
+
+    #calculate-salary button,
+    .calculate {
+        font-size: 10px;
     }
 
     .invoice-head-top {
